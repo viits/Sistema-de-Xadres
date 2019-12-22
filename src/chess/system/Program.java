@@ -1,14 +1,15 @@
 package chess.system;
 
+import boardgame.Board;
 import boardgame.Position;
+import chess.ChessMatch;
 
 public class Program {
 
     public static void main(String[] args) {
         
-        Position p = new Position(3, 3);
-        System.out.println(p);
-        
+       ChessMatch partida = new ChessMatch();
+        UI.printBoard(partida.getPieces());
     }
 
 }
