@@ -21,7 +21,11 @@ public class Program {
                 System.out.println();
                 System.out.println("Source: ");
                 ChessPosition source = UI.readChessPosition(ler);
-
+                
+                boolean[][] possibleMoves = partida.possibleMoves(source); 
+                UI.clearScreen();
+                UI.printBoard(partida.getPieces(),possibleMoves);
+                
                 System.out.println();
 
                 System.out.println("Target: ");
