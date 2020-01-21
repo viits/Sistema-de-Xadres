@@ -20,28 +20,28 @@ public class Program {
         while (true) {
             try {
                 UI.clearScreen();
-                UI.printMatch(partida,captured);
+                UI.printMatch(partida, captured);
                 System.out.println();
                 System.out.println("Source: ");
                 ChessPosition source = UI.readChessPosition(ler);
-                
-                boolean[][] possibleMoves = partida.possibleMoves(source); 
+
+                boolean[][] possibleMoves = partida.possibleMoves(source);
                 UI.clearScreen();
-                UI.printBoard(partida.getPieces(),possibleMoves);
-                
+                UI.printBoard(partida.getPieces(), possibleMoves);
+
                 System.out.println();
 
                 System.out.println("Target: ");
                 ChessPosition target = UI.readChessPosition(ler);
 
                 ChessPiece capturedPiece = partida.performChessMove(source, target);
-                if(capturedPiece != null){
+                if (capturedPiece != null) {
                     captured.add(capturedPiece);
                 }
-            }catch(ChessException e){
+            } catch (ChessException e) {
                 System.out.println(e.getMessage());
                 ler.nextLine();
-            }catch(InputMismatchException e){
+            } catch (InputMismatchException e) {
                 System.out.println(e.getMessage());
                 ler.nextLine();
             }
